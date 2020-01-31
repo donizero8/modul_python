@@ -1,3 +1,2 @@
-print("---------------------------------")
-print("Hello " * 5)
-print("---------------------------------")
+print("My name is", "Python.", end=" ")
+print("Monty Python.")
