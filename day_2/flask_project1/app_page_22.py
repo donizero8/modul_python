@@ -1,7 +1,8 @@
 from flask import Flask, abort, request, render_template #update this code
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-
+bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
