@@ -1,0 +1,23 @@
+import os
+from flask import Flask
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'hardToGuessString'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'flaskDB1.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+bootstrap = Bootstrap(app)
+
+#import views
+from views import *
+
+#import model
+from model import *
+
+if __name__ == '__main__':
+    app.run(debug=True)
